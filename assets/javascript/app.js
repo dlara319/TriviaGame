@@ -1,4 +1,3 @@
-// ========= Tagline Questions =========
 var tagOne = {
 	question:  "What travels around the world but stays in one spot?",
 	choice1: "Air",
@@ -100,17 +99,14 @@ var tagTen = {
 	info: "<img src='assets/images/ice.jpg'>"
 };
 
-// ========= Quote Questions ============
 
 
-
-// Creating arrays that will hold the questions for each category.
 var startQuestions = [tagOne, tagTwo, tagThree, tagFour, tagFive, tagSix, tagSeven, tagEight, tagNine, tagTen];
 
-// The empty array that will be populated when the user selects a category.
+
 var questions = [];
 
-// Setting initial variable values. 
+
 var num = 0;
 var time = 30;
 var numbercorrect = 0;
@@ -118,10 +114,6 @@ var numberwrong = 0;
 var numtimeout = 0;
 
 
-
-// ========= Functions ==========
-
-// Sets the time back to 30s, sets an interval for the timer, displays the next question.
 function nextquestion() {
 	time = 30;
 	counter = setInterval(increment, 1000);
@@ -134,7 +126,7 @@ function nextquestion() {
 	$(".info").empty();
 };
 
-// Counts down & displays the remaining time. Stops if time = 0 and starts an animation when time remaining < 10sec.
+
 function increment() {
 	time--
 	$(".timer").html("<h2>Time Remaining: " + time + "</h2>")
@@ -148,7 +140,6 @@ function increment() {
 	};
 };
 
-// Stops the timer. If there are more questions go on to the next, if not end the game. 
 function stop() {
 	clearInterval(counter);
 	num++;
@@ -159,27 +150,27 @@ function stop() {
 	};
 };
 
-// Lets the user know they got the question right and displays an image.
+
 function correctanswer() {
 	$(".question").html("<p>Correct!</p>");
 	$(".info").html("<p>"+questions[num].info+"</p>");
 }
 
-// Counts a wrong answer, tells the user they are wrong, and displays an image. 
+
 function wronganswer() {
 	numberwrong++;
 	$(".question").html("<p>Wrong! <br> The correct answer was: "+questions[num].answer+"</p>");
 	$(".info").html("<p>"+questions[num].info+"</p>");
 };
 
-// Counts a failure to answer the question, tells the user they are out of time, and displays an image. 
+
 function timeout() {
 	numtimeout++;
 	$(".question").html("<p>Time's up! <br> The correct answer was: "+questions[num].answer+"</p>");
 	$(".info").html("<p>"+questions[num].info+"</p>");
 }
 
-// Tells the user how many questions they got right/wrong/unanswered. Resets variables and shows buttons so the user can play again. 
+
 function endgame() {
 	$(".question").html("<h2>You got " + numbercorrect + " answers correct!</h2>"
 		+ "<h2>You got " + numberwrong + " wrong!</h2>" + "<h2>You didn't answer " + numtimeout + " questions!</h2>");
@@ -194,7 +185,7 @@ function endgame() {
 };
 
 
-// Category select buttons.
+
 $(".startButton").click(function() {
 	questions = startQuestions;
 	nextquestion();
@@ -204,7 +195,6 @@ $(".startButton").click(function() {
 
 
 
-// Clicking on a choice.
 $(".choice").click(function() {
 
 	if ($(this).text() == questions[num].answer) {
