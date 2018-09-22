@@ -10,14 +10,14 @@ h1 {
 	font-size: 70px;
 	margin-top: 10px;
     margin-bottom: 10px;
-    color: white;
+    color: rgb(238, 238, 238);
 }
 
 p {
 	font-family: 'Bangers', cursive;
 	font-size: 25px;
     margin-bottom:5px;
-    color: white;
+    color: rgb(238, 238, 238);
 }
 
 h2 {
@@ -25,7 +25,7 @@ h2 {
 	margin-top:10px;
 	margin-bottom:10px;
     font-size: 30px;
-    color: white;
+    color: rgb(238, 238, 238);
 }
 
 .choice {
@@ -58,7 +58,7 @@ h2 {
 
 
 body {
-	background-color: crimson;
+	background-image: url("../../assets/images/spiral.jpg");
     height:50%;
     
 }
