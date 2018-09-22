@@ -9,7 +9,7 @@ var tagOne = {
 };
 
 var tagTwo = {
-	question: "I disappear every time you say my. What am I?",
+	question: "I disappear every time you say my name. What am I?",
 	choice1: "Wind",
 	choice2: "Silence",
 	choice3: "Beetlejuice",
@@ -166,7 +166,7 @@ function wronganswer() {
 
 function timeout() {
 	numtimeout++;
-	$(".question").html("<p>Time's up! <br> The correct answer was: "+questions[num].answer+"</p>");
+	$(".question").html("<p>Time is up sucka! <br> The correct answer was: "+questions[num].answer+"</p>");
 	$(".info").html("<p>"+questions[num].info+"</p>");
 }
 
